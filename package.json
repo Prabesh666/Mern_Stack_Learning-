@@ -1,0 +1,29 @@
+{
+    "name": "mern_stack_learning-",
+    "version": "1.0.0",
+    "description": "**Following The semantic coding  Semantic codding**",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon src/app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Prabesh666/Mern_Stack_Learning-.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Prabesh666/Mern_Stack_Learning-/issues"
+    },
+    "homepage": "https://github.com/Prabesh666/Mern_Stack_Learning-#readme",
+    "dependencies": {
+        "dotenv": "^17.2.0",
+        "express": "^5.1.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.10"
+    }
+}
