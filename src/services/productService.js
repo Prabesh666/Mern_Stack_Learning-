@@ -16,4 +16,11 @@ const getProductById = (id) => {
     const foundProduct = products.find((product) => product.id == id);
     return foundProduct;
 };
-export default { getProducts, getProductById };
+const createProduct = (data) => {
+
+    products.push(data);
+    fs.writeFileSync("./src/data/products.json", JSON.stringify(products));
+
+    //create Products
+};
+export default { getProducts, getProductById, createProduct };

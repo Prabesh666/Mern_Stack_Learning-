@@ -21,7 +21,9 @@ const deleteProduct = (req, res) => {
     res.send("The bad product is deleted ");
 };
 const createProduct = (req, res) => {
-    res.send("create a Product");
+    productService.createProduct(req.body)
+
+    res.status(201).send("Product Created Successfully.");
 
 };
 export default {

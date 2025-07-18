@@ -9,7 +9,12 @@
         "color": "Deep Purple",
         "releaseYear": 2022,
         "inStock": true,
-        "features": ["Face ID", "5G", "Super Retina XDR", "Triple Camera"]
+        "features": [
+            "Face ID",
+            "5G",
+            "Super Retina XDR",
+            "Triple Camera"
+        ]
     },
     {
         "id": 2,
@@ -22,7 +27,12 @@
         "color": "Titanium Black",
         "releaseYear": 2024,
         "inStock": true,
-        "features": ["S-Pen", "Quad Camera", "120Hz AMOLED", "8K Video"]
+        "features": [
+            "S-Pen",
+            "Quad Camera",
+            "120Hz AMOLED",
+            "8K Video"
+        ]
     },
     {
         "id": 3,
@@ -35,7 +45,11 @@
         "color": "Emerald Green",
         "releaseYear": 2024,
         "inStock": false,
-        "features": ["120Hz Display", "Fast Charging", "Alert Slider"]
+        "features": [
+            "120Hz Display",
+            "Fast Charging",
+            "Alert Slider"
+        ]
     },
     {
         "id": 4,
@@ -48,7 +62,12 @@
         "color": "Bay Blue",
         "releaseYear": 2023,
         "inStock": true,
-        "features": ["Tensor G3", "Magic Eraser", "4K Video", "Face Unlock"]
+        "features": [
+            "Tensor G3",
+            "Magic Eraser",
+            "4K Video",
+            "Face Unlock"
+        ]
     },
     {
         "id": 5,
@@ -61,6 +80,22 @@
         "color": "Fusion White",
         "releaseYear": 2024,
         "inStock": true,
-        "features": ["Curved Display", "200MP Camera", "120W Fast Charging"]
+        "features": [
+            "Curved Display",
+            "200MP Camera",
+            "120W Fast Charging"
+        ]
+    },
+    {
+        "name": "Keyboard Mouse",
+        "brand": "Apple",
+        "catogery": "Electronice",
+        "Price": 1500
+    },
+    {
+        "name": "Keyboard gaming ",
+        "brand": "fantech-Atom",
+        "catogery": "Electronice",
+        "Price": 15000
     }
 ]

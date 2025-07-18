@@ -20,6 +20,7 @@
     },
     "homepage": "https://github.com/Prabesh666/Mern_Stack_Learning-#readme",
     "dependencies": {
+        "body-parser": "^2.2.0",
         "dotenv": "^17.2.0",
         "express": "^5.1.0"
     },
