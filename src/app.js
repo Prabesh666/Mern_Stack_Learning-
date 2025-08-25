@@ -7,7 +7,7 @@ import orderRoutes from "./routes/orderRoute.js";
 import authRoutes from "./routes/authRoute.js";
 import userRoutes from "./routes/userRoute.js";
 import todoRoutes from "./routes/todoRoute.js";
-import mongoose from "mongoose";
+
 import connectDB from "./config/database.js";
 import logger from "./middlewares/logger.js";
 import auth from "./middlewares/auth.js";
@@ -15,7 +15,6 @@ import auth from "./middlewares/auth.js";
 
 import connectCloudinary from "./config/cloudinary.js";
 
-import dotenv from "dotenv";
 
 
 
