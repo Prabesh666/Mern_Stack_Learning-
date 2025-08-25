@@ -4,9 +4,7 @@
     {
       "src": "src/app.js",
       "use": "@vercel/node",
-      "config": {
-        "nodeVersion": "16.20.2" 
-      }
+      
     }
   ],
   "routes": [
