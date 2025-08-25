@@ -1,25 +1,22 @@
+import bodyParser from "body-parser";
 import express from "express";
 import multer from "multer";
-import bodyParser from "body-parser";
-import config from "./config/config.js";
-import productRoutes from "./routes/productRoute.js";
-import orderRoutes from "./routes/orderRoute.js";
-import authRoutes from "./routes/authRoute.js";
-import userRoutes from "./routes/userRoute.js";
-import todoRoutes from "./routes/todoRoute.js";
 
+import auth from "./middlewares/auth.js";
+import authRoutes from "./routes/authRoute.js";
+import config from "./config/config.js";
+import connectCloudinary from "./config/cloudinary.js";
 import connectDB from "./config/database.js";
 import logger from "./middlewares/logger.js";
-import auth from "./middlewares/auth.js";
-
-
-import connectCloudinary from "./config/cloudinary.js";
-
-
-
+import orderRoutes from "./routes/orderRoute.js";
+import productRoutes from "./routes/productRoute.js";
+import todoRoutes from "./routes/todoRoute.js";
+import userRoutes from "./routes/userRoute.js";
 
 const app = express();
+
 const upload = multer({ storage: multer.memoryStorage() });
+
 connectDB();
 connectCloudinary();
 
@@ -27,12 +24,12 @@ app.use(bodyParser.json());
 app.use(logger);
 
 app.get("/", (req, res) => {
-    res.json({
-        name: config.name,
-        port: config.port,
-        status: "OK",
-        version: config.version,
-    });
+  res.json({
+    name: config.name,
+    port: config.port,
+    status: "Running...",
+    version: config.version,
+  });
 });
 
 app.use("/api/auth", authRoutes);
@@ -42,5 +39,5 @@ app.use("/api/users", auth, upload.single("image"), userRoutes);
 app.use("/todos", todoRoutes);
 
 app.listen(config.port, () => {
-    console.log(`Server running at port ${config.port}...`);
+  console.log(`Server running at port ${config.port}...`);
 });
