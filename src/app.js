@@ -1,7 +1,6 @@
 import bodyParser from "body-parser";
 import express from "express";
 import multer from "multer";
-
 import auth from "./middlewares/auth.js";
 import authRoutes from "./routes/authRoute.js";
 import config from "./config/config.js";
@@ -14,17 +13,15 @@ import todoRoutes from "./routes/todoRoute.js";
 import userRoutes from "./routes/userRoute.js";
 
 const app = express();
+
 const upload = multer({ storage: multer.memoryStorage() });
 
-// Connect DB & Cloudinary
 connectDB();
 connectCloudinary();
 
-// Middlewares
 app.use(bodyParser.json());
 app.use(logger);
 
-// Routes
 app.get("/", (req, res) => {
   res.json({
     name: config.name,
@@ -40,6 +37,6 @@ app.use("/api/orders", auth, orderRoutes);
 app.use("/api/users", auth, upload.single("image"), userRoutes);
 app.use("/todos", todoRoutes);
 
-// ❌ Remove app.listen() for Vercel
-// Export app for serverless
-export default app;
+app.listen(config.port, () => {
+  console.log(`Server running at port ${config.port}...`);
+});
