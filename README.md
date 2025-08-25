@@ -27,7 +27,6 @@ root/
 - node_modules/
 - src/
   - app.js
-  -
   - constants/
     - roles.js
   - controllers/
@@ -184,3 +183,178 @@ root/
 
 ## Skip
 - db.products.find().skip(3)
+
+# Mongoose
+
+- ODM of MongoDB for Node.js
+- Schema validation
+- Models
+- Middleware
+- Relationships
+
+## Schema
+
+- Structure/rule of a document/data
+
+## Model
+
+- Class built from schema, interact with the database
+- Semantics: Always singular, pascal case
+- For e.g. Product, ProductOrder
+
+# Encryption & Decryption
+
+- Encryption: Converting normal readable text into cipher (unreadable) text.
+- for e.g: hello => asa8s90a8w90N&*BOIIuihb
+
+- Decryption: Converting cipher text to readable form
+
+## Types
+1. Symmetric: Same key is used for encryption and decryption. for e.g AES
+2. Asymmetric: Different keys are used for encryption and decryption. for Private key, public key, RSA algorithm
+
+# Hashing
+
+- Type of encryption, this is one way encryption.
+- Register:  Test123456 => 3asdf4a86sdf16w84e1fas68df4asd8f6asdf4 (store)
+- Login: Test123456 => asdf4a86sdf16w84e1fas68df4asd8f6asdf (compare)
+
+# Salt
+
+- Adding random texts in the hash value
+
+# Auth
+
+1. Login success
+2. Token generated - JWT
+3. Store token - Cookie storage, session storage, local storage
+4. Append this token in every requests to handle auth
+
+## JWT - JSON Web Token
+
+- Used for auth
+- Self verified
+- Tamper-proof
+
+### Structure
+
+1. Header
+2. Payload
+3. Signature
+
+## Cookie
+- Can be stored in both server and browser
+- Size: 4KB
+- Expiry date can be set
+- Available in all tabs
+
+## Session storage
+- Can be stored only in browser
+- Size: 5MB
+- Expires on tab close
+- Available in one tab only
+
+## Local storage
+- Can be stored only in browser
+- Size: 5MB - 10MB
+- Never expires
+- Available in all tabs
+
+# Middleware
+- Function that sits between request and response.
+
+Browser ----- Request -----> Server
+Middleware
+Server ------ Response -----> Browser
+
+- Function that has the accessibility of both request and response objects
+- It has the functionality to go to next() function call
+
+## Usage
+- Logging
+- Authentication & Authorization
+- Error handling
+- Modify request data
+
+# Authentication & Authorization
+- Authentication: Is user logged in/available?
+- Authorization: Is user allowed to do something?
+
+# RBAC - Role Based Access Control
+
+- Single type role: Access Hierarchy
+- Multiple roles: 
+1. USER -> purchase
+2. MERCHANT -> product mngt
+3. ADMIN -> user mngt, order mngt
+
+# Product order
+1. User id
+2. Product items
+  a. product id
+  b. quantity
+3. status
+4. orderNumber
+5. totalPrice
+6. shippingAddress
+
+# File upload
+1. Data/File input : Body -> FormData -> Multer
+2. Temporary storage: /uploads -> Buffer (Binary data)
+3. Storage bucket: Upload to Cloudinary -> filePath/url
+4. Set the filepath/url: use this filepath/url to store in database
+
+# Payment
+1. Payment method use (for e.g pay via khalti)
+2. Update payment status in our system
+
+## Khalti
+1. Payment initialize -> Generate url using the input data
+2. Payment occurs in the khalti portal
+3. Redirects to your return url after completion
+
+# Reset password
+1. User requests on Forgot password
+2. Sends an email to that user, with a reset-password link and token
+3. Also store this token in the db
+4. Requests for reset password
+5. Includes new password, confirm password with token
+6. Update the password
+
+# Semantics
+- Code readability
+- Code formatting
+- File and folder structure
+- File and folder naming
+  - In Javascript use either camelCase or kebab-case
+  - For js files use camelCase
+  - For HTML, CSS files use kebab-case
+  - Always use noun
+- For variables use noun
+- For functions/methods use verb
+- Check for singular/plural
+- Routes should be kebab-case with all lowercase texts
+- Add lines above and below if/else, loop, function call
+
+# Debugging
+- Process of finding errors 
+- Steps to debug
+  1. Check the root app.js file
+  2. Check the routes (check spelling, route orders)
+  3. Check the controllers, check spelling, check params, arguments
+  4. Check the service, check spelling, check params, arguments
+
+# AI Integration
+- Gemini
+
+# Multi vendor system
+Every merchant should be able to fetch:
+  1. List of products created by them
+  2. Orders made on their product
+
+They should be able to update/delete their product.
+
+# Todos
+- Deployment
+- Typescript
+- SMS
