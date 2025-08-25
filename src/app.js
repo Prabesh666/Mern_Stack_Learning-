@@ -1,5 +1,3 @@
-// 
-
 import bodyParser from "body-parser";
 import express from "express";
 import multer from "multer";
@@ -16,6 +14,7 @@ import todoRoutes from "./routes/todoRoute.js";
 import userRoutes from "./routes/userRoute.js";
 
 const app = express();
+
 const upload = multer({ storage: multer.memoryStorage() });
 
 connectDB();
@@ -39,4 +38,6 @@ app.use("/api/orders", auth, orderRoutes);
 app.use("/api/users", auth, upload.single("image"), userRoutes);
 app.use("/todos", todoRoutes);
 
-export default app; // ✅ Export instead of app.listen
+app.listen(config.port, () => {
+  console.log(`Server running at port ${config.port}...`);
+});
