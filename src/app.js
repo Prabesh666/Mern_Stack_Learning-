@@ -12,6 +12,8 @@ import orderRoutes from "./routes/orderRoute.js";
 import productRoutes from "./routes/productRoute.js";
 import userRoutes from "./routes/userRoute.js";
 
+
+
 const app = express();
 
 const upload = multer({ storage: multer.memoryStorage() });
@@ -23,6 +25,7 @@ app.use(cors());
 
 app.use(bodyParser.json());
 app.use(logger);
+
 
 app.get("/", (req, res) => {
   res.json({
@@ -37,6 +40,8 @@ app.use("/api/auth", authRoutes);
 app.use("/api/products", upload.array("images", 5), productRoutes);
 app.use("/api/orders", auth, orderRoutes);
 app.use("/api/users", auth, upload.single("image"), userRoutes);
+
+
 
 
 app.listen(config.port, () => {
