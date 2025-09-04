@@ -120,4 +120,4 @@ const logout = async(req, res) => {
 
 };
 
-export default { register, login, forgotPassword, resetPassword, logout };; // export all the functions
+export default { register, login, forgotPassword, resetPassword, logout };// export all the functions
